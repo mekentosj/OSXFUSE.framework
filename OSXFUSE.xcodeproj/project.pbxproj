@@ -186,6 +186,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "OSXFUSE" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -263,20 +265,21 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				INFOPLIST_PREPROCESS = YES;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = /Library/Frameworks;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-D_FILE_OFFSET_BITS=64",
 					"-D_DARWIN_USE_64_BIT_INODE",
@@ -285,7 +288,7 @@
 					"-L$(OSXFUSE_BUILD_ROOT)/usr/local/lib",
 					"-losxfuse",
 				);
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.8;
 				USER_HEADER_SEARCH_PATHS = "$(OSXFUSE_BUILD_ROOT)/usr/local/include/osxfuse";
 			};
 			name = Debug;
@@ -293,21 +296,22 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = supported;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				INFOPLIST_PREPROCESS = YES;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = /Library/Frameworks;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = (
 					"-D_FILE_OFFSET_BITS=64",
 					"-D_DARWIN_USE_64_BIT_INODE",
@@ -316,7 +320,7 @@
 					"-L$(OSXFUSE_BUILD_ROOT)/usr/local/lib",
 					"-losxfuse",
 				);
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.8;
 				SEPARATE_STRIP = NO;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -340,7 +344,7 @@
 				GCC_PREFIX_HEADER = OSXFUSE_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = /Library/Frameworks;
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				OSXFUSE_BUILD_ROOT = "";
 				OTHER_LDFLAGS = (
 					"-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib",
@@ -367,7 +371,7 @@
 				GCC_PREFIX_HEADER = OSXFUSE_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = /Library/Frameworks;
+				INSTALL_PATH = "@loader_path/../Frameworks";
 				OSXFUSE_BUILD_ROOT = "";
 				OTHER_LDFLAGS = (
 					"-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib",
