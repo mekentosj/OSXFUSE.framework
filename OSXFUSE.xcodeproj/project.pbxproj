@@ -274,6 +274,10 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				INFOPLIST_PREPROCESS = YES;
@@ -306,6 +310,10 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "";
 				INFOPLIST_PREPROCESS = YES;
@@ -343,6 +351,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OSXFUSE_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${SRCROOT}/../fuse/include/\"/**",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
 				INSTALL_PATH = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
@@ -354,7 +367,7 @@
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
 				SDK_NAME = "$(PRODUCT_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/include/osxfuse";
+				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -371,6 +384,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OSXFUSE_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${SRCROOT}/../fuse/include/\"/**",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
 				INSTALL_PATH = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
@@ -383,7 +401,7 @@
 				PRODUCT_NAME = OSXFUSE;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIPFLAGS = "";
-				USER_HEADER_SEARCH_PATHS = "$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/include/osxfuse";
+				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

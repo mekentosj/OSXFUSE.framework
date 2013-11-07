@@ -38,7 +38,7 @@
 
 #define FUSE_USE_VERSION 26
 #include <fuse.h>
-#include <fuse/fuse_darwin.h>
+#include <fuse_darwin.h>
 
 #include <string.h>
 #include <errno.h>
