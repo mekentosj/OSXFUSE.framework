@@ -173,7 +173,6 @@
 				28D525BA0EA8076400B7CF7B /* Resources */,
 				28D525BC0EA8076400B7CF7B /* Sources */,
 				28D525C20EA8076400B7CF7B /* Frameworks */,
-				28D525C40EA8076400B7CF7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -218,23 +217,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		28D525C40EA8076400B7CF7B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ x\"$ACTION\" != x\"build\" ]\nthen\n  exit 0\nfi\n\nTEMPLATE_DIR=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProjectTemplates/\"\nif [ ! -d \"$TEMPLATE_DIR\" ]\nthen\n  mkdir \"$TEMPLATE_DIR\"\nfi\ncp -R \"${SOURCE_ROOT}/ProjectTemplates/\" \"$TEMPLATE_DIR\"\nfind \"$TEMPLATE_DIR\" -type d -name '.svn' -exec rm -rf '{}' \\; > /dev/null 2>&1 || true\n\nGEN_BRIDGE_METADATA=/usr/bin/gen_bridge_metadata\nif [ ! -x $GEN_BRIDGE_METADATA ]\nthen\n  echo \"Skipping BridgeSupport due to missing gen_bridge_metadata.\"\n  exit 0\nfi\nOUT_FRAMEWORK=\"${TARGET_BUILD_DIR}/${SDK_NAME}.framework\"\nBRIDGE_DIR=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BridgeSupport/\"\nif [ ! -d \"$BRIDGE_DIR\" ]\nthen\n  mkdir \"$BRIDGE_DIR\"\nfi\nDYLD_LIBRARY_PATH=\"${OSXFUSE_BUILD_ROOT}/usr/local/lib/\" $GEN_BRIDGE_METADATA -f \"$OUT_FRAMEWORK\" > \"${BRIDGE_DIR}/${SDK_NAME}.bridgesupport\"\n\nDEBUG_DIR=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Debug/\"\nif [ ! -d \"$DEBUG_DIR\" ]\nthen\n  mkdir \"$DEBUG_DIR\"\nfi\ncp -R \"${OUT_FRAMEWORK}.dSYM\" \"$DEBUG_DIR\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28D525BC0EA8076400B7CF7B /* Sources */ = {
@@ -341,7 +323,6 @@
 		28D525C60EA8076400B7CF7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -360,7 +341,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -370,6 +351,7 @@
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
 				SDK_NAME = "$(PRODUCT_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
@@ -394,7 +376,7 @@
 				);
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_PREPROCESSOR_DEFINITIONS = "OSXFUSE_CORE_VERSION=$(OSXFUSE_BUNDLE_VERSION_LITERAL)";
-				INSTALL_PATH = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -405,6 +387,7 @@
 				PRODUCT_NAME = OSXFUSE;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIPFLAGS = "";
+				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
 				WRAPPER_EXTENSION = framework;
 			};
