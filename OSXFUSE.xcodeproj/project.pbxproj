@@ -353,6 +353,7 @@
 				OTHER_LDFLAGS = "-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib";
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
+				SDKROOT = macosx;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
@@ -388,6 +389,7 @@
 				OTHER_LDFLAGS = "-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib";
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
+				SDKROOT = macosx;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIPFLAGS = "";
 				STRIP_INSTALLED_PRODUCT = NO;
