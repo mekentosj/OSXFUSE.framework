@@ -190,7 +190,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "OSXFUSE" */;
 			compatibilityVersion = "Xcode 3.1";
@@ -353,6 +353,7 @@
 				OTHER_LDFLAGS = "-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib";
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
+				SDKROOT = macosx;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../fuse/include/osxfuse\"";
@@ -388,6 +389,7 @@
 				OTHER_LDFLAGS = "-L$(OSXFUSE_BUILD_ROOT)/$(PREFIX)/lib";
 				PREFIX = /usr/local;
 				PRODUCT_NAME = OSXFUSE;
+				SDKROOT = macosx;
 				SDK_NAME = "$(PRODUCT_NAME)";
 				STRIPFLAGS = "";
 				STRIP_INSTALLED_PRODUCT = NO;
